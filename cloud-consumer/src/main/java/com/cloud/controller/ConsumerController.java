@@ -16,7 +16,8 @@ public class ConsumerController {
     RestTemplate restTemplate;
     @PostMapping("/consumer/add")
     public CommonResult add(People people) {
-        System.out.println(people);
+        //进行了修改
+       // System.out.println(people);
         return restTemplate.postForObject(PRIMARY_URL+"/producer/add",people,CommonResult.class);
 
     }

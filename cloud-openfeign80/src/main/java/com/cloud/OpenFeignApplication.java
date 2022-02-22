@@ -1,16 +1,16 @@
 package com.cloud;
 
-import com.myrule.MyselfRuleConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.openfeign.FeignClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-@RibbonClient(name = "CLOUD-PRODUCER-SERVICE",configuration = MyselfRuleConfig.class)
-public class ConsumerApplication {
+@EnableFeignClients
+public class OpenFeignApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerApplication.class,args);
+        SpringApplication.run(OpenFeignApplication.class,args);
     }
 }

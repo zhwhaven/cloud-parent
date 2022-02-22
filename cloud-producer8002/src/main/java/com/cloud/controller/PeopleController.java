@@ -30,7 +30,7 @@ public class PeopleController {
     }
 
     @GetMapping("/producer/select/{id}")
-    public CommonResult<People> select(@PathVariable("id")int id){
+    public CommonResult<People> select(@PathVariable("id") int id){
         System.out.println("port="+port);
         People people = peopleService.selectPeople(id);
         return new CommonResult<People>(200,"select success",people);

@@ -11,6 +11,10 @@
         <module>cloud-common</module>
         <module>cloud-producer</module>
         <module>cloud-consumer</module>
+        <module>cloud-eureka</module>
+        <module>cloud-producer8002</module>
+        <module>cloud-openfeign</module>
+        <module>cloud-openfeign80</module>
     </modules>
 
     <packaging>pom</packaging>

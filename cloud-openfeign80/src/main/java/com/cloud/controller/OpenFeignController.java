@@ -22,4 +22,9 @@ public class OpenFeignController {
     public CommonResult<People> select(@PathVariable("id")int id){
         return openFeignService.select(id);
     }
+
+    @GetMapping("/openfeign/timeout")
+    public String timeout(){
+        return openFeignService.timeout();
+    };
 }

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.TimeUnit;
+
 @RestController
 @Slf4j
 public class PeopleController {
@@ -35,4 +37,14 @@ public class PeopleController {
         People people = peopleService.selectPeople(id);
         return new CommonResult<People>(200,"select success",people);
     }
+
+    @GetMapping("/producer/timeout")
+    public String timeout(){
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return port;
+    };
 }

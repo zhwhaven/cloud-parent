@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: cloud-consumer-service
+  sleuth:
+    sampler:
+      probability: 1
 eureka:
   client:
     register-with-eureka: true

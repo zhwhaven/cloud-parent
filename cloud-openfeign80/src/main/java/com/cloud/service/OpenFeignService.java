@@ -19,4 +19,7 @@ public interface OpenFeignService {
     @GetMapping("/producer/select/{id}")
     public CommonResult<People> select(@PathVariable("id")int id);
 
+    @GetMapping("/producer/timeout")
+    public String timeout();
+
 }

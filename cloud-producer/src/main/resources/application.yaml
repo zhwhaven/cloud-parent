@@ -9,6 +9,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 1477112645
+  sleuth:
+    sampler:
+      probability: 1
 
 mybatis:
   type-aliases-package: com.cloud.entity

@@ -1,0 +1,21 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: after_route
+          #uri: http://localhost:8001
+          uri: lb://CLOUD-PRODUCER-SERVICE
+          predicates:
+            - Path=/producer/select/**
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
